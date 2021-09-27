@@ -16,6 +16,7 @@ namespace PasswordGenerator
         public PasswordGenerator()
         {
             InitializeComponent();
+
         }
 
         private void btnCopy_Click(object sender, EventArgs e)
@@ -25,7 +26,10 @@ namespace PasswordGenerator
 
         private void btnGeneratePassword_Click(object sender, EventArgs e)
         {
+            int length = int.Parse(tbPasswordLength.Text);
 
+            Generator test1 = new Generator(length, cbSymbols.Checked, cbNumbers.Checked, cbLowercaseChars.Checked, cbUppercaseChars.Checked, cbSimilarChars.Checked, cbAmbiguousChars.Checked);
+            tbGeneratedPassword.Text = test1.GeneratePassword();
         }
     }
 }
