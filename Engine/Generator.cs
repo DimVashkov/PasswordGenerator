@@ -65,7 +65,7 @@ namespace Engine
             return new String(chars);
         }
 
-        public String CreateNumbers()
+        private String CreateNumbers()
         {
             String validNumbers="";
             for(int i = 0; i < 10; i++)
@@ -75,7 +75,7 @@ namespace Engine
             return validNumbers;
         }
 
-        public String CreateSymbols()
+        private String CreateSymbols()
         {
             String validSymbols = "";
             for(char i = '!'; i <= '/'; i++)
@@ -97,7 +97,7 @@ namespace Engine
 
             return validSymbols;
         }
-        public String CreateLowerCaseLetters()
+        private String CreateLowerCaseLetters()
         {
             String validCharacters = "";
             for(char i = 'a'; i <= 'z'; i++)
@@ -106,7 +106,7 @@ namespace Engine
             }
             return validCharacters;
         }
-        public String CreateUpperCaseLetters()
+        private String CreateUpperCaseLetters()
         {
             String validCharacters = "";
             for (char i = 'A'; i <= 'Z'; i++)
@@ -115,13 +115,13 @@ namespace Engine
             }
             return validCharacters;
         }
-        public String RemoveSimilarCharacters(String validCharacters)
+        private String RemoveSimilarCharacters(String validCharacters)
         {
             //Done using Replace -> Fine if done for 1-2-3 chars, awful otherwise
             String output = validCharacters.Replace("i", "").Replace("l", "").Replace("1", "").Replace("L", "").Replace("o", "").Replace("0", "").Replace("O", "");
             return output;
         }
-        public String RemoveAmbiguousCharacters(String validCharacters)
+        private String RemoveAmbiguousCharacters(String validCharacters)
         {
             String output = Regex.Replace(validCharacters, "[{}/\\*`~,.;:<>]", "");
             return output;
